@@ -9,7 +9,7 @@ http://www.mulesoft.org/schema/mule/os http://www.mulesoft.org/schema/mule/os/cu
 	<flow name="sampleFlow" doc:id="c7826098-f6be-4a55-90be-20aec806baf9" >
 		<http:listener doc:name="Listener" doc:id="3a60fa20-5e83-467a-bd78-cb30b56aedd9" config-ref="HTTP_Listener_config" path="sample"/>
 		<os:store doc:name="Store" doc:id="5f203712-c43f-4fff-9281-9501509eb8cf" key="lookupData" objectStore="Object_store">
-			<os:value ><![CDATA[#["welcome to Object store"]]]></os:value>
+			<os:value ><![CDATA[#["welcome to Object stores added"]]]></os:value>
 		</os:store>
 	</flow>
 </mule>
