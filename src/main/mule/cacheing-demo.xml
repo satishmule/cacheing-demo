@@ -13,7 +13,7 @@ http://www.mulesoft.org/schema/mule/ee/core http://www.mulesoft.org/schema/mule/
 	<ee:object-store-caching-strategy name="Caching_Strategy" doc:name="Caching Strategy" doc:id="357a4d9c-a18b-4995-8f67-75cfdd8424fd" keyGenerationExpression="#[attributes.uriParams.empID]" />
 	<flow name="cacheing-demoFlow" doc:id="75b9c13d-5325-45b8-86dc-e3d22911f1d9" >
 		<http:listener doc:name="Listener" doc:id="8bd78c74-f8dd-4db8-9ee3-6581c62e4cd7" config-ref="HTTP_Listener_config" path="/cache-demo/{empID}"/>
-		<logger level="INFO" doc:name="start Logger" doc:id="88089b4e-d514-489c-a4ef-c2382eedbccd" />
+		<logger level="INFO" doc:name="start Logger here" doc:id="88089b4e-d514-489c-a4ef-c2382eedbccd" />
 		<ee:cache doc:name="Cache" doc:id="38bc992a-845f-4bd9-b874-61dd5eff0d80" filterExpression='#[attributes.uriParams.empID == "3"]'>
 			<logger level="INFO" doc:name="cache start Log" doc:id="933bf8ad-90a7-4299-a333-c8561486309c" message="cache start"/>
 			<http:request method="GET" doc:name="Consume Req and Resp Service" doc:id="744f56cf-0d53-4bfa-b733-4904786ff608" config-ref="HTTP_Request_configuration" url="https://reqres.in/api/users/{userID}">
