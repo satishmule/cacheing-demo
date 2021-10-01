@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns:os="http://www.mulesoft.org/schema/mule/os" xmlns:http="http://www.mulesoft.org/schema/mule/http"
+	xmlns="http://www.mulesoft.org/schema/mule/core"
+	xmlns:doc="http://www.mulesoft.org/schema/mule/documentation" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd
+http://www.mulesoft.org/schema/mule/os http://www.mulesoft.org/schema/mule/os/current/mule-os.xsd">
+	<flow name="sample1Flow" doc:id="0e8e4f75-86a2-49f1-9744-5d578c80d3d7" >
+		<http:listener doc:name="Listener" doc:id="74a26477-307c-45ba-90cd-80b005059d8f" config-ref="HTTP_Listener_config" path="sample1"/>
+		<os:retrieve doc:name="Retrieve" doc:id="78ebbca4-183d-43b9-9c78-33e7a66b34a9" key="lookupData" objectStore="Object_store">
+			<os:default-value ><![CDATA[""]]></os:default-value>
+		</os:retrieve>
+		<logger level="INFO" doc:name="Logger" doc:id="1207f87f-f2ec-482a-8af6-d83b18c0bb90" message="#[payload]"/>
+	</flow>
+</mule>
